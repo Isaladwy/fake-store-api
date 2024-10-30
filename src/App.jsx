@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Loader from './components/Loader';
+import ProductCard from './components/ProductCard';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -31,7 +32,9 @@ function App() {
       <h1>Product Listing</h1>
       <div>
         {products.map((product) => (
-          <span>Product ({product.id})</span>
+          <span>
+            <ProductCard key={product.id} product={product} />
+          </span>
         ))}
       </div>
     </div>
