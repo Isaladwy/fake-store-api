@@ -1,6 +1,6 @@
 function ProductCard({ product }) {
   return (
-    <div className="flex flex-col p-4 bg-white shadow-md rounded-lg">
+    <div className="flex flex-col p-4 bg-white shadow-md rounded-lg transition transform hover:scale-105 hover:shadow-lg">
       <img
         src={product.image}
         alt={product.title}

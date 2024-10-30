@@ -23,16 +23,18 @@ function App() {
     fetchProducts();
   }, []);
 
-  if (loading) return <div className="text-center py-20">Loading...</div>;
+  if (loading) return <Loader />;
   if (error)
     return <div className="text-center text-red-500 py-20">{error}</div>;
 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6">Product Listing</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <span>
+            <ProductCard key={product.id} product={product} />
+          </span>
         ))}
       </div>
     </div>
